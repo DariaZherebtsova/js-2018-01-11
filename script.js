@@ -1,4 +1,7 @@
-[
+
+console.log("I am ready");
+
+var json_phones = [
     {
         "age": 0, 
         "id": "motorola-xoom-with-wi-fi", 
@@ -152,4 +155,51 @@
         "name": "Motorola CHARM\u2122 with MOTOBLUR\u2122", 
         "snippet": "Motorola CHARM fits easily in your pocket or palm.  Includes MOTOBLUR service."
     }
-]
+];
+
+//var tmpl = _.template(document.getElementById('list-template').innerHTML);
+
+//var result = tmpl({count: 2,
+//						 json_phones: json_phones });
+						 
+//document.write( result );						 
+
+
+class ListPhones {
+
+	constructor(options) {
+		console.log(options.elem);
+		//читаем спецHTML
+		var tmpl = _.template(document.getElementById('list-template').innerHTML);
+		//запускаем шаблонизатор
+		var result = tmpl({count: 2,
+							 json_phones: json_phones });
+		//записываем в elem
+		options.elem.innerHTML = result;		
+			
+	}
+
+}
+
+
+listPhones = new ListPhones({elem: document.querySelector(".phones-list")});
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
